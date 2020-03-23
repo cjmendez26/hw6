@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="hw6.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <title>Weather Dashboard</title>
+</head>
+
+<body style="background-color: black;">
+  <!--background set as black-->
+  <div class="jumbotron jumbotron-fluid bg-info">
+    <div class="container">
+      <h1 class="display-4">
+        <center>Weather Dashboard</center>
+      </h1>
+    </div>
+  </div>
+  <!--end of the weather main header-->
+
+  <div class="row no-gutters">
+    <div class="col-6 col-md-4 text-light">
+      <div class="input-group mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="City:" aria-label="City:"
+          aria-describedby="basic-addon2">
+        <div class="input-btn">
+          <!--search onclick button-->
+          <span class="btn bg-light" id="searchBtn" type="submit" value="Search City:">Search</span>
+          <div id="buttons-view">
+            <!--//rendered buttons will be dumped here-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of div where buttons will be bumped-->
+    <div class="col-lg-6 col-md-8 text-light">
+      <!--Beginning of div where current city search will be dumped-->
+      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header" id="city-view">City:
+        </div>
+        <!--current city dumped-->
+      </div>
+      <!--end of div with current city-->
+      <!--beginning of div where 5 day forecast will be dumped-->
+      <div class="col-lg-6 col-md-8 text-light" id="fiveFore">5 Day Forecast:
+      </div>
+    </div>
+    <!--end of forecast div-->
+  </div>
+  <script type="text/javascript" src="hw6.js"></script>
+</body>
+
+</html>
