@@ -31,16 +31,16 @@ function displayCityWeather(city) {
     var lat = response.coord.lat;
     var temp = response.main.temp;
     // var fTemp = ((temp - 273.15) * 1.8) + 32;
-    var pCity = $("<P>").text("city: "+ city);
+    var pCity = $("<P>").text("City: "+ city);
     cityView.append(pCity);
-    var pOne = $("<p>").text("Temperature: " + temp);
-    cityView.append(pOne);
+    var pTemp = $("<p>").text("Temperature: " + temp);
+    cityView.append(pTemp);
     var humidity = response.main.humidity;
-    var pTwo = $("<p>").text("Humidity: " + humidity);
-    cityView.append(pTwo);
+    var pHum = $("<p>").text("Humidity: " + humidity);
+    cityView.append(pHum);
     var windSpeed = response.wind.speed;
-    var pThree = $("<p>").text("Wind Speed: " + windSpeed);
-    cityView.append(pThree);
+    var pWind = $("<p>").text("Wind Speed: " + windSpeed);
+    cityView.append(pWind);
     var icon = response.weather[0].icon;
     var queryUVI = "http://api.openweathermap.org/data/2.5/uvi?appid=042b537d20004a979ae8274c6d124325&lat="+lat+"&lon="+lon;
   
@@ -49,12 +49,12 @@ function displayCityWeather(city) {
       method: "GET"
     }).then(function(response) {
       console.log(response);
-
+      var pImg = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
+      cityView.append(pImg);
       var uv = response.value;
-      var pFour = $("<p>").text("UV Index: " + uv);
-        cityView.append(pFour);
-      var pFive = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
-      cityView.append(pFive);
+      var pUv = $("<p>").text("UV Index: " + uv);
+        cityView.append(pUv);
+     
     })
 
    
@@ -90,7 +90,7 @@ function displayFiveDayForecast(city) {
     }
   })
 }
-//onclick function
+//onclick function for the search button
 $("#searchBtn").on("click", function (event) {
   event.preventDefault();
   var search = $("#searchInput").val().trim();
